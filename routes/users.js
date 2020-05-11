@@ -55,7 +55,7 @@ router.post('/', [
   try {
     let user = await User.findOne({ telephone })
     if (user) {
-      res.status(400).json({ msg: 'User already exist' })
+      return res.status(400).json({ msg: 'User already exist' })
     }
     user = new User({
       name,
